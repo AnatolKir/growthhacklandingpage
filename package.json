@@ -57,7 +57,7 @@
     "dev-types": "types=true rollup -c -w",
     "prebuild": "mkdir -p public",
     "build": "node --no-warnings rollup -c",
-    "vercel-build": "rm -rf public && mkdir -p public && cp src/anime.js public/anime.min.js && cp index.html public/index.html",
+    "vercel-build": "rm -rf public && mkdir -p public && cp -f src/anime.js public/anime.min.js && cp -f index.html public/index.html && ls -la public/",
     "release": "build=true release=true types=true rollup -c",
     "open-examples": "browser-sync start --startPath examples --server --no-notify --directory --files '**/*.js'",
     "test-browser": "browser-sync start --startPath tests/index.html --server --files '**/*.js' --no-notify --directory",
