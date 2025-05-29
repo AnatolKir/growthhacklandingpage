@@ -57,7 +57,7 @@
     "dev-types": "types=true rollup -c -w",
     "prebuild": "echo 'Skipping prebuild'",
     "build": "echo 'Skipping build'",
-    "vercel-build": "cp -f src/anime.js anime.min.js",
+    "vercel-build": "cp -f src/anime.js anime.min.js && cp -f styles.css styles.css && cp -f animations.js animations.js",
     "release": "build=true release=true types=true rollup -c",
     "open-examples": "browser-sync start --startPath examples --server --no-notify --directory --files '**/*.js'",
     "test-browser": "browser-sync start --startPath tests/index.html --server --files '**/*.js' --no-notify --directory",
