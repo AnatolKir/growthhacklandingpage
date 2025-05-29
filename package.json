@@ -55,8 +55,9 @@
   "scripts": {
     "dev": "rollup -c -w",
     "dev-types": "types=true rollup -c -w",
+    "prebuild": "mkdir -p lib",
     "build": "node --no-warnings rollup -c",
-    "vercel-build": "npm run build",
+    "vercel-build": "npm run prebuild && npm run build",
     "release": "build=true release=true types=true rollup -c",
     "open-examples": "browser-sync start --startPath examples --server --no-notify --directory --files '**/*.js'",
     "test-browser": "browser-sync start --startPath tests/index.html --server --files '**/*.js' --no-notify --directory",
