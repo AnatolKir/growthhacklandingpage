@@ -1,6 +1,7 @@
 import terser from '@rollup/plugin-terser';
 import filesize from 'rollup-plugin-filesize';
-import ts from 'rollup-plugin-ts';
+import typescript from '@rollup/plugin-typescript';
+import { dts } from 'rollup-plugin-dts';
 import fs from 'fs';
 import path from 'path';
 
@@ -135,7 +136,7 @@ if (process.env.types) {
     {
       input: inputPath,
       output: { file: './types/index.js', format: 'esm', banner: banner('ESM') },
-      plugins: [prependTypes, cleanup, ts()]
+      plugins: [prependTypes, cleanup, typescript(), dts()]
     }
   );
 }
